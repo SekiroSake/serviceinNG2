@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { PostsService } from './posts.service';
 import { AppComponent } from './app.component';
 
+
 @NgModule({
   declarations: [
     AppComponent

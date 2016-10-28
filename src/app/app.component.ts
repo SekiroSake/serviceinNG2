@@ -8,8 +8,8 @@ import { Post } from './post'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  isLoading = true;
    private post: Post;
-  
 
    constructor(private _postService: PostsService) {
     this._postService.createPost({userId:1, body:"b",title:"a"});
@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
       .subscribe(posts => {
         // console.log(JSON.stringify(posts[1].body));
         // this.post.title = posts[0].title;
-        // this.post.body = posts[1].body;      
+        // this.post.body = posts[1].body;  
+        this.isLoading = false;    
          this.post = {
            userId: posts[0].id,
            body: posts[0].body,

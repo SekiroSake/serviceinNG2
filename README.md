@@ -1,4 +1,26 @@
 # ServicePrac
+# Font awesome in ng2 cli
+- npm install font-awesome --save
+- in the angular-cli.json file locate the styles[] array and addons[ ]array, and then add font-awesome references to them, like below:
+```
+"apps": [
+          {
+             "root": "src",
+             "outDir": "dist",
+             ....
+             "styles": [
+                "styles.css",
+                "../node_modules/bootstrap/dist/css/bootstrap.css",
+                "../node_modules/bootstrap/dist/css/bootstrap.css",
+                "../node_modules/font-awesome/css/font-awesome.css" // -here webpack will automatically build a link css element out of this!?
+             ],
+             ...
+         }
+       ], 
+"addons": [
+    "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)" // - here
+],
+```
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
